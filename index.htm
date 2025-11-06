@@ -41,9 +41,11 @@
       Mapbox Satellite Streets: mapbox://styles/mapbox/satellite-streets-v12
       Mapbox Streets: mapbox://styles/mapbox/streets-v12
       */
-      style: 'mapbox://styles/mapbox/outdoors-v12',
-      center: [-121.403732, 40.492392],
-      zoom: 10
+      style: 'mapbox://styles/hashthegoat10/cmhl6dq9q00hq01rg0uf6atz9',
+      center: [-122.13951974752811, 37.731865103479485],
+      zoom: 7
+  
+    
     });
 
     map.on('load', () => {
@@ -56,33 +58,37 @@
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-121.415061, 40.506229]
+                'coordinates': [-122.27734199157183, 37.78392195061235]
               },
               "properties": {
-                'name': "my first popup",
-                'description': "I went camping here",
+                'name': " In N Out",
+                'description': "my favorite fast food",
+                'image': "img/inout.webp",
+                
               }
             },
             {
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-121.505184, 40.488084]
+                'coordinates': [-121.89741200393749, 37.41589987762532]
               },
               "properties": {
-                'name': "my 2nd popup",
-                'description': "I went skiing here",
+                'name': "Great Mall",
+                'description': "i like shopping here",
+                'image': "img/greatmall.jpg",
               }
             },
             {
               'type': 'Feature',
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-121.354465, 40.488737]
+                'coordinates': [ -122.20320449880029, 37.7508559018307]
               },
               "properties": {
-                'name': "my 3rd popup",
-                'description': "I went hiking here",
+                'name': "Oakland Arena",
+                'description': "i went to my first concert here",
+                'image': "img/arena.webp",
               }
             }
           ]
@@ -107,12 +113,12 @@
           const coordinates = e.feature.geometry.coordinates.slice();
           const name = e.feature.properties.name;
           const description = e.feature.properties.description;
-          // const image = e.feature.properties.image;
+          const image = e.feature.properties.image;
 
           new mapboxgl.Popup()
             .setLngLat(coordinates)
             .setHTML("<strong>" + name + "</strong><br/>" + description)
-            // .setHTML("<img src='" + image + "'><br><strong>" + name + "</strong><br/>" + description)
+            .setHTML("<img src='" + image + "'><br><strong>" + name + "</strong><br/>" + description)
             .addTo(map);
         }
       });
