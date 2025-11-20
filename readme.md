@@ -1,6 +1,5 @@
 # My Favorite Places 
 
-!["My Fav Places" App](img/header.png)
 
 ## Overview 
 
